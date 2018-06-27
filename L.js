@@ -285,12 +285,12 @@ function generate6() {
 	sentence = nextSentence;
 	//createP(sentence);
 	Box();
-	if(t>=4){
+	if(t>=3){
 		background(51);
 		axiom = axiom6;
 		sentence = axiom;
 		t=0;
-	} else if(t<4) {
+	} else if(t<3) {
 		t++;
 	}
 }

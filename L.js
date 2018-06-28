@@ -126,6 +126,7 @@ function generate1() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==17) {break;}
 		for (var j = 0; j<rules1.length; j++) {
 			if (current == rules1[j].a) {
 				found = true
@@ -155,6 +156,7 @@ function generate2() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==8) {break;}
 		for (var j = 0; j<rules2.length; j++) {
 			if (current == rules2[j].a) {
 				found = true
@@ -184,6 +186,7 @@ function generate3() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==17) {break;}
 		for (var j = 0; j<rules3.length; j++) {
 			if (current == rules3[j].a) {
 				found = true
@@ -213,6 +216,7 @@ function generate4() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==7) {break;}
 		for (var j = 0; j<rules4.length; j++) {
 			if (current == rules4[j].a) {
 				found = true
@@ -242,6 +246,7 @@ function generate5() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==6) {break;}
 		for (var j = 0; j<rules5.length; j++) {
 			if (current == rules5[j].a) {
 				found = true
@@ -256,12 +261,12 @@ function generate5() {
 	sentence = nextSentence;
 	//createP(sentence);
 	PPlant();
-	if(t>=7){
+	if(t>=6){
 		background(51);
 		axiom = axiom5;
 		sentence = axiom;
 		t=0;
-	} else if(t<7) {
+	} else if(t<6) {
 		t++;
 	}
 }
@@ -271,6 +276,7 @@ function generate6() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==3) {break;}
 		for (var j = 0; j<rules6.length; j++) {
 			if (current == rules6[j].a) {
 				found = true
@@ -300,6 +306,7 @@ function generate7() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==5) {break;}
 		for (var j = 0; j<rules7.length; j++) {
 			if (current == rules7[j].a) {
 				found = true
@@ -314,12 +321,12 @@ function generate7() {
 	sentence = nextSentence;
 	//createP(sentence);
 	Square();
-	if(t>=6){
+	if(t>=5){
 		background(51);
 		axiom = axiom7;
 		sentence = axiom;
 		t=0;
-	} else if(t<6) {
+	} else if(t<5) {
 		t++;
 	}
 }
@@ -329,6 +336,7 @@ function generate8() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==6) {break;}
 		for (var j = 0; j<rules8.length; j++) {
 			if (current == rules8[j].a) {
 				found = true
@@ -358,6 +366,7 @@ function generate9() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==6) {break;}
 		for (var j = 0; j<rules9.length; j++) {
 			if (current == rules9[j].a) {
 				found = true
@@ -387,6 +396,7 @@ function generate0() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
+		if (t==16) {break;}
 		for (var j = 0; j<rules0.length; j++) {
 			if (current == rules0[j].a) {
 				found = true
@@ -401,12 +411,12 @@ function generate0() {
 	sentence = nextSentence;
 	//createP(sentence);
 	Dia();
-	if(t>=17){
+	if(t>=16){
 		background(51);
 		axiom = axiom0;
 		sentence = axiom;
 		t=0;
-	} else if(t<17) {
+	} else if(t<16) {
 		t++;
 	}
 }

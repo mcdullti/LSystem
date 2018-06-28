@@ -731,8 +731,5 @@ function setup() {
 
 function draw() {
 	len = 1+lenS;
-	textSize(32);
-	text(x,width,height);
-	fill(255);
 }
 

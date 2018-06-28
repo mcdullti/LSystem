@@ -731,6 +731,7 @@ function setup() {
 
 function draw() {
 	len = 1+lenS;
-	text(x, window.innerWidth, window.innerHeight)
+	//textSize(32);
+	text(x, window.innerWidth, window.innerHeight);
 }
 

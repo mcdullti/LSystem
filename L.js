@@ -733,5 +733,6 @@ function draw() {
 	len = 1+lenS;
 	//textSize(32);
 	text(x, window.innerWidth, window.innerHeight);
+	fill(255);
 }
 

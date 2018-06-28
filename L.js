@@ -725,11 +725,12 @@ function keyPressed() {
 }
 
 function setup() {
-	createCanvas(screen.width,screen.height);
+	createCanvas(width,height);
 	background(51);
 }
 
 function draw() {
 	len = 1+lenS;
+	text(x, width, height)
 }
 

@@ -805,7 +805,7 @@ function keyPressed() {
 		sentence = axiom;
 		t=0;
 		y=0;
-	} else if (keyCode == 'm' || 'M') {
+	} else if (key == 'm' || 'M') {
 		background(51);
 		x = -1;
 		y = 1;

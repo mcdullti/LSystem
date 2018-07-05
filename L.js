@@ -1,9 +1,13 @@
+var streams = [];
+var fadeInterval = 1.6;
+var symbolSize = 14;
 var axiom;
 var sentence;
 var lenS = 0;
 var len = 1 + lenS;
 var t = 0;
 var x;
+var y;
 
 var axiom1 = "FX";
 var axiom2 = "X";
@@ -434,7 +438,7 @@ function dragon() {
 			rotate(PI / 2);
 		} else if (current == ")") {
 			rotate(-PI / 2);
-		}  
+		}
 	}
 }
 
@@ -455,7 +459,7 @@ function Plant() {
 			push();
 		} else if (current == "]") {
 			pop();
-		} 
+		}
 	}
 }
 
@@ -473,7 +477,7 @@ function CCurve() {
 			rotate(PI / 4);
 		} else if (current == "=") {
 			rotate(-PI / 4);
-		}  
+		}
 	}
 }
 
@@ -494,7 +498,7 @@ function Curve() {
 			push();
 		} else if (current == "]") {
 			pop();
-		} 
+		}
 	}
 }
 
@@ -520,7 +524,7 @@ function PPlant() {
 			stroke(150,75,0);
 		} else if (current == "E") {
 			stroke(0,128,100);
-		} 
+		}
 	}
 }
 
@@ -539,7 +543,7 @@ function Box() {
 		} else if (current == "f") {
 			line (0,0,0,-len/2);
 			translate(0, -len/2);
-		} 
+		}
 	}
 }
 
@@ -555,7 +559,7 @@ function Square() {
 			rotate(PI / 2);
 		} else if (current == "=") {
 			rotate(-PI / 2);
-		} 
+		}
 	}
 }
 
@@ -574,7 +578,7 @@ function Spiral() {
 		} else if (current == "X") {
 			line (0,0,0,-len);
 			translate(0, -len);
-		} 
+		}
 	}
 }
 
@@ -590,7 +594,7 @@ function Hex() {
 			rotate(PI / 5 * 2);
 		} else if (current == "=") {
 			rotate(-PI / 5 * 2);
-		} 
+		}
 	}
 }
 
@@ -606,8 +610,78 @@ function Dia() {
 			rotate(PI / 4);
 		} else if (current == "=") {
 			rotate(-PI / 4);
-		} 
+		}
 	}
+}
+
+function Symbol(x, y, speed, first, opacity) {
+  this.x = x;
+  this.y = y;
+  this.value;
+
+  this.speed = speed;
+  this.first = first;
+  this.opacity = opacity;
+
+  this.switchInterval = round(random(2, 25));
+
+  this.setToRandomSymbol = function() {
+    var charType = round(random(0, 5));
+    if (frameCount % this.switchInterval == 0) {
+      if (charType > 1) {
+        // set it to Katakana
+        this.value = String.fromCharCode(
+          0x30A0 + round(random(0, 96))
+        );
+      } else {
+        // set it to numeric
+        this.value = round(random(0,9));
+      }
+    }
+  }
+
+  this.rain = function() {
+    this.y = (this.y >= height) ? 0 : this.y += this.speed;
+  }
+
+}
+
+function Stream() {
+  this.symbols = [];
+  this.totalSymbols = round(random(5, 35));
+  this.speed = random(5, 22);
+
+  this.generateSymbols = function(x, y) {
+    var opacity = 255;
+    var first = round(random(0, 4)) == 1;
+    for (var i =0; i <= this.totalSymbols; i++) {
+      symbol = new Symbol(
+        x,
+        y,
+        this.speed,
+        first,
+        opacity
+      );
+      symbol.setToRandomSymbol();
+      this.symbols.push(symbol);
+      opacity -= (255 / this.totalSymbols) / fadeInterval;
+      y -= symbolSize;
+      first = false;
+    }
+  }
+
+  this.render = function() {
+    this.symbols.forEach(function(symbol) {
+      if (symbol.first) {
+        fill(140, 255, 170, symbol.opacity);
+      } else {
+        fill(0, 255, 70, symbol.opacity);
+      }
+      text(symbol.value, symbol.x, symbol.y);
+      symbol.rain();
+      symbol.setToRandomSymbol();
+    });
+  }
 }
 
 function keyPressed() {
@@ -719,17 +793,36 @@ function keyPressed() {
 		background(51);
 		sentence = axiom;
 		t=0;
-	} 
-
+	} else if (keyCode == 'm' || 'M') {
+		background(51);
+		x = null;
+		t=0;
+	}
 	return false;
 }
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 	background(51);
+	var z = 0;
+	for (var i = 0; i <= width / symbolSize; i++) {
+		var stream = new Stream();
+		stream.generateSymbols(z, random(-2000, 0));
+		streams.push(stream);
+		z += symbolSize
+	}
+
+	textFont('Consolas');
+	textSize(symbolSize);
 }
 
 function draw() {
 	len = 1+lenS;
-}
 
+	if (y == 1) {
+		background(51, 150);
+		streams.forEach(function(stream) {
+			stream.render();
+		});
+	}
+}

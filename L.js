@@ -805,7 +805,8 @@ function keyPressed() {
 		sentence = axiom;
 		t=0;
 		y=0;
-	} else if (key == 'm' || key == 'M') {
+	}
+	if (key == 'm' || key == 'M') {
 		background(51);
 		x = -1;
 		y = 1;

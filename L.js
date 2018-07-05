@@ -7,7 +7,8 @@ var lenS = 0;
 var len = 1 + lenS;
 var t = 0;
 var x;
-var y;
+var y = 0;
+var z = 0;
 
 var axiom1 = "FX";
 var axiom2 = "X";
@@ -726,6 +727,7 @@ function keyPressed() {
 		x = 1;
 		axiom = axiom1;
 		sentence = axiom;
+		y=0;
 	} else if (key == '2') {
 		background(51);
 		stroke(255);
@@ -733,6 +735,7 @@ function keyPressed() {
 		x = 2;
 		axiom = axiom2;
 		sentence = axiom;
+		y=0;
 	} else if (key == '3') {
 		background(51);
 		stroke(255);
@@ -740,6 +743,7 @@ function keyPressed() {
 		x = 3;
 		axiom = axiom3;
 		sentence = axiom;
+		y=0;
 	} else if (key == '4') {
 		background(51);
 		stroke(255);
@@ -747,6 +751,7 @@ function keyPressed() {
 		x = 4;
 		axiom = axiom4;
 		sentence = axiom;
+		y=0;
 	} else if (key == '5') {
 		background(51);
 		stroke(255);
@@ -754,6 +759,7 @@ function keyPressed() {
 		x = 5;
 		axiom = axiom5;
 		sentence = axiom;
+		y=0;
 	} else if (key == '6') {
 		background(51);
 		stroke(255);
@@ -761,6 +767,7 @@ function keyPressed() {
 		x = 6;
 		axiom = axiom6;
 		sentence = axiom;
+		y=0;
 	} else if (key == '7') {
 		background(51);
 		stroke(255);
@@ -768,6 +775,7 @@ function keyPressed() {
 		x = 7;
 		axiom = axiom7;
 		sentence = axiom;
+		y=0;
 	} else if (key == '8') {
 		background(51);
 		stroke(255);
@@ -775,6 +783,7 @@ function keyPressed() {
 		x = 8;
 		axiom = axiom8;
 		sentence = axiom;
+		y=0;
 	} else if (key == '9') {
 		background(51);
 		stroke(255);
@@ -782,6 +791,7 @@ function keyPressed() {
 		x = 9;
 		axiom = axiom9;
 		sentence = axiom;
+		y=0;
 	} else if (key == '0') {
 		background(51);
 		stroke(255);
@@ -789,14 +799,17 @@ function keyPressed() {
 		x = 0;
 		axiom = axiom0;
 		sentence = axiom;
+		y=0;
 	} else if (keyCode == 'z' || 'Z') {
 		background(51);
 		sentence = axiom;
 		t=0;
+		y=0;
 	} else if (keyCode == 'm' || 'M') {
 		background(51);
 		x = null;
 		t=0;
+		y = 1;
 	}
 	return false;
 }
@@ -804,7 +817,6 @@ function keyPressed() {
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 	background(51);
-	var z = 0;
 	for (var i = 0; i <= width / symbolSize; i++) {
 		var stream = new Stream();
 		stream.generateSymbols(z, random(-2000, 0));

@@ -807,9 +807,9 @@ function keyPressed() {
 		y=0;
 	} else if (keyCode == 'm' || 'M') {
 		background(51);
-		x = null;
-		t=0;
+		x = -1;
 		y = 1;
+		t=0;
 	}
 	return false;
 }
@@ -821,9 +821,8 @@ function setup() {
 		var stream = new Stream();
 		stream.generateSymbols(z, random(-2000, 0));
 		streams.push(stream);
-		z += symbolSize
+		z += symbolSize;
 	}
-
 	textFont('Consolas');
 	textSize(symbolSize);
 }

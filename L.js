@@ -808,6 +808,12 @@ function keyPressed() {
 	}
 	if (key == 'm' || key == 'M') {
 		background(0);
+		for (var i = 0; i <= width / symbolSize; i++) {
+			var stream = new Stream();
+			stream.generateSymbols(z, random(-2000, 0));
+			streams.push(stream);
+			z += symbolSize;
+		}
 		x = -1;
 		y = 1;
 		t=0;

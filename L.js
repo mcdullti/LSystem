@@ -808,7 +808,7 @@ function keyPressed() {
 	}
 	if (key == 'm' || key == 'M') {
 		background(0);
-		Symbol.y = 0;
+		Symbol.rain.y = 0;
 		x = -1;
 		y = 1;
 		t=0;

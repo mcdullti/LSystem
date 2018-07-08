@@ -829,7 +829,15 @@ function keyPressed() {
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
-	set();
+	background(0);
+	for (var i = 0; i <= width / symbolSize; i++) {
+		var stream = new Stream();
+		stream.generateSymbols(z, random(-2000, 0));
+		streams.push(stream);
+		z += symbolSize;
+	}
+	textFont('Consolas');
+	textSize(symbolSize);
 }
 
 function draw() {

@@ -1,6 +1,6 @@
 var streams = [];
-var fadeInterval = 1.6;
-var symbolSize = 14;
+var fadeInterval = 1.2;
+var symbolSize = 12;
 var axiom;
 var sentence;
 var lenS = 0;

@@ -266,12 +266,12 @@ function generate5() {
 	sentence = nextSentence;
 	//createP(sentence);
 	PPlant();
-	if(t>=6){
+	if(t>=5){
 		background(0);
 		axiom = axiom5;
 		sentence = axiom;
 		t=0;
-	} else if(t<6) {
+	} else if(t<5) {
 		t++;
 	}
 }
@@ -685,18 +685,6 @@ function Stream() {
   }
 }
 
-function set() {
-	background(0);
-	for (var i = 0; i <= width / symbolSize; i++) {
-		var stream = new Stream();
-		stream.generateSymbols(z, random(-2000, 0));
-		streams.push(stream);
-		z += symbolSize;
-	}
-	textFont('Consolas');
-	textSize(symbolSize);
-}
-
 function keyPressed() {
 	if (len > 0) {
 		if (keyCode == SHIFT) {
@@ -813,13 +801,13 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (keyCode == 'z' || 'Z') {
-		set();
+		background(0);
 		sentence = axiom;
 		t=0;
 		y=0;
 	}
 	if (key == 'm' || key == 'M') {
-		set();
+		background(0);
 		x = -1;
 		y = 1;
 		t=0;

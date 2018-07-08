@@ -2,7 +2,7 @@ let windowW = window.innerWidth;
 let windowH = window.innerHeight;
 let isLoaded = false;
 let glitch;
-let imgSrc = '3.jpg';
+let imgSrc = '1.jpg';
 
 function setup() {
     background(0);

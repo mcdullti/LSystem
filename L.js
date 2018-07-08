@@ -685,6 +685,18 @@ function Stream() {
   }
 }
 
+function set() {
+	background(0);
+	for (var i = 0; i <= width / symbolSize; i++) {
+		var stream = new Stream();
+		stream.generateSymbols(z, random(-2000, 0));
+		streams.push(stream);
+		z += symbolSize;
+	}
+	textFont('Consolas');
+	textSize(symbolSize);
+}
+
 function keyPressed() {
 	if (len > 0) {
 		if (keyCode == SHIFT) {
@@ -801,13 +813,13 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (keyCode == 'z' || 'Z') {
-		background(0);
+		set();
 		sentence = axiom;
 		t=0;
 		y=0;
 	}
 	if (key == 'm' || key == 'M') {
-		background(0);
+		set();
 		x = -1;
 		y = 1;
 		t=0;
@@ -817,15 +829,7 @@ function keyPressed() {
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
-	background(0);
-	for (var i = 0; i <= width / symbolSize; i++) {
-		var stream = new Stream();
-		stream.generateSymbols(z, random(-2000, 0));
-		streams.push(stream);
-		z += symbolSize;
-	}
-	textFont('Consolas');
-	textSize(symbolSize);
+	set();
 }
 
 function draw() {

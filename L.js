@@ -251,7 +251,7 @@ function generate5() {
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
 		var found = false;
-		if (t==6) {break;}
+		if (t==5) {break;}
 		for (var j = 0; j<rules5.length; j++) {
 			if (current == rules5[j].a) {
 				found = true
@@ -808,7 +808,7 @@ function keyPressed() {
 	}
 	if (key == 'm' || key == 'M') {
 		background(0);
-		Symbol.rain.y = 0;
+		symbol.rain();
 		x = -1;
 		y = 1;
 		t=0;

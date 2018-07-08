@@ -147,7 +147,7 @@ function generate1() {
 	//createP(sentence);
 	dragon();
 	if(t>=17){
-		background(51);
+		background(0);
 		axiom = axiom1;
 		sentence = axiom;
 		t=0;
@@ -177,7 +177,7 @@ function generate2() {
 	//createP(sentence);
 	Plant();
 	if(t>=8){
-		background(51);
+		background(0);
 		axiom = axiom2;
 		sentence = axiom;
 		t=0;
@@ -207,7 +207,7 @@ function generate3() {
 	//createP(sentence);
 	CCurve();
 	if(t>=17){
-		background(51);
+		background(0);
 		axiom = axiom3;
 		sentence = axiom;
 		t=0;
@@ -237,7 +237,7 @@ function generate4() {
 	//createP(sentence);
 	Curve();
 	if(t>=7){
-		background(51);
+		background(0);
 		axiom = axiom4;
 		sentence = axiom;
 		t=0;
@@ -267,7 +267,7 @@ function generate5() {
 	//createP(sentence);
 	PPlant();
 	if(t>=6){
-		background(51);
+		background(0);
 		axiom = axiom5;
 		sentence = axiom;
 		t=0;
@@ -297,7 +297,7 @@ function generate6() {
 	//createP(sentence);
 	Box();
 	if(t>=3){
-		background(51);
+		background(0);
 		axiom = axiom6;
 		sentence = axiom;
 		t=0;
@@ -327,7 +327,7 @@ function generate7() {
 	//createP(sentence);
 	Square();
 	if(t>=5){
-		background(51);
+		background(0);
 		axiom = axiom7;
 		sentence = axiom;
 		t=0;
@@ -357,7 +357,7 @@ function generate8() {
 	//createP(sentence);
 	Spiral();
 	if(t>=6){
-		background(51);
+		background(0);
 		axiom = axiom8;
 		sentence = axiom;
 		t=0;
@@ -387,7 +387,7 @@ function generate9() {
 	//createP(sentence);
 	Hex();
 	if(t>=6){
-		background(51);
+		background(0);
 		axiom = axiom9;
 		sentence = axiom;
 		t=0;
@@ -417,7 +417,7 @@ function generate0() {
 	//createP(sentence);
 	Dia();
 	if(t>=16){
-		background(51);
+		background(0);
 		axiom = axiom0;
 		sentence = axiom;
 		t=0;
@@ -427,7 +427,7 @@ function generate0() {
 }
 
 function dragon() {
-	background(51);
+	background(0);
 	translate(width/2,height*2/3);
 	stroke(255);
 	for (var i = 0; i<sentence.length; i++) {
@@ -444,7 +444,7 @@ function dragon() {
 }
 
 function Plant() {
-	background(51);
+	background(0);
 	translate(width/2,height);
 	stroke(255);
 	for (var i = 0; i<sentence.length; i++) {
@@ -465,7 +465,7 @@ function Plant() {
 }
 
 function CCurve() {
-	background(51);
+	background(0);
 	translate(width/3,height/3);
 	rotate(PI/2);
 	stroke(255);
@@ -483,7 +483,7 @@ function CCurve() {
 }
 
 function Curve() {
-	background(51);
+	background(0);
 	translate(width/2,height/2);
 	stroke(255);
 	for (var i = 0; i<sentence.length; i++) {
@@ -504,7 +504,7 @@ function Curve() {
 }
 
 function PPlant() {
-	background(51);
+	background(0);
 	translate(width/2,height);
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
@@ -530,7 +530,7 @@ function PPlant() {
 }
 
 function Box() {
-	background(51);
+	background(0);
 	translate(width/2,height/2);
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
@@ -549,7 +549,7 @@ function Box() {
 }
 
 function Square() {
-	background(51);
+	background(0);
 	translate(width * 2 / 3,height * 2 / 3);
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
@@ -565,7 +565,7 @@ function Square() {
 }
 
 function Spiral() {
-	background(51);
+	background(0);
 	translate(width /3,height /3);
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
@@ -584,7 +584,7 @@ function Spiral() {
 }
 
 function Hex() {
-	background(51);
+	background(0);
 	translate(width /3,height /3);
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
@@ -600,7 +600,7 @@ function Hex() {
 }
 
 function Dia() {
-	background(51);
+	background(0);
 	translate(width /2,height);
 	for (var i = 0; i<sentence.length; i++) {
 		var current = sentence.charAt(i);
@@ -694,7 +694,7 @@ function keyPressed() {
 			lenS -= 1;
 		}
 	} else if (len <= 0) {
-		background(51);
+		background(0);
 		len = 1;
 		lenS = 0;
 	}
@@ -721,7 +721,7 @@ function keyPressed() {
 			generate0();
 		}
 	} else if (key == '1') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 1;
@@ -729,7 +729,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '2') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 2;
@@ -737,7 +737,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '3') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 3;
@@ -745,7 +745,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '4') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 4;
@@ -753,7 +753,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '5') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 5;
@@ -761,7 +761,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '6') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 6;
@@ -769,7 +769,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '7') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 7;
@@ -777,7 +777,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '8') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 8;
@@ -785,7 +785,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '9') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 9;
@@ -793,7 +793,7 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (key == '0') {
-		background(51);
+		background(0);
 		stroke(255);
 		t=0;
 		x = 0;
@@ -801,13 +801,13 @@ function keyPressed() {
 		sentence = axiom;
 		y=0;
 	} else if (keyCode == 'z' || 'Z') {
-		background(51);
+		background(0);
 		sentence = axiom;
 		t=0;
 		y=0;
 	}
 	if (key == 'm' || key == 'M') {
-		background(51);
+		background(0);
 		x = -1;
 		y = 1;
 		t=0;
@@ -817,7 +817,7 @@ function keyPressed() {
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
-	background(51);
+	background(0);
 	for (var i = 0; i <= width / symbolSize; i++) {
 		var stream = new Stream();
 		stream.generateSymbols(z, random(-2000, 0));
@@ -832,7 +832,7 @@ function draw() {
 	len = 1+lenS;
 
 	if (y == 1) {
-		background(51, 150);
+		background(0, 150);
 		streams.forEach(function(stream) {
 			stream.render();
 		});

@@ -43,12 +43,16 @@
       z - reset system<br>
       m - Matrix
     </h1>
-    <script>
-      function convertCanvasToImage(canvas) {
-      	var image = new Image();
-      	image.src = canvas.toDataURL("image/png");
-      	return image;
+    <?php
+      $url = 'http://rest7.com/html_to_image';
+      $data = json_decode(file_get_contents('http://api.rest7.com/v1/html_to_image.php?url=' . $url . '&format=png'));
+
+      if (@$data->success !== 1)
+      {
+          die('Failed');
       }
-    </script>
+      $image = file_get_contents($data->file);
+      file_put_contents('rendered_page.png', $image);
+    ?>
   </body>
 </html>

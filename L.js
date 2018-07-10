@@ -688,7 +688,7 @@ function Stream() {
   }
 }
 
-function Glitch {
+function Glitch() {
     constructor(img) {
         this.channelLen = 4;
         this.imgOrigin = img;

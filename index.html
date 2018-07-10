@@ -43,5 +43,12 @@
       z - reset system<br>
       m - Matrix
     </h1>
+    <script>
+      function convertCanvasToImage(canvas) {
+      	var image = new Image();
+      	image.src = canvas.toDataURL("image/png");
+      	return image;
+      }
+    </script>
   </body>
 </html>

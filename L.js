@@ -833,6 +833,7 @@ function draw() {
 
 	if (y == 1) {
 		background(0, 150);
+		Stream().symbols = null;
 		streams.forEach(function(stream) {
 			stream.render();
 		});

@@ -2,21 +2,21 @@
 
 function HideFooter()
 {
-    var display = document.getElementById("myFooter").style.display;
+    var display = document.getElementById("site-footer").style.display;
     if(display=="none")
-        document.getElementById("myFooter").style.display="block";
+        document.getElementById("site-footer").style.display="block";
     else
-        document.getElementById("myFooter").style.display="none";
+        document.getElementById("site-footer").style.display="none";
 }
 
 $("#myButton").click(function(){
 
-    if($("#myFooter").is(":visible"))
-        $("#myFooter").hide();
+    if($("#site-footer").is(":visible"))
+        $("#site-footer").hide();
     else
-        $("#myFooter").show();
+        $("#site-footer").show();
 });
 
 $(document).ready(function(){
-    $("#myFooter").hide();
+    $("#site-footer").hide();
 });

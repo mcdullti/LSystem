@@ -8,3 +8,11 @@ function HideFooter()
     else
         document.getElementById("myFooter").style.display="none";
 }
+
+$("#myButton").click(function(){
+
+    if($("#myFooter").is(":visible"))
+        $("#myFooter").hide();
+    else
+        $("#myFooter").show();
+});

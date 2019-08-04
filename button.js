@@ -16,3 +16,7 @@ $("#myButton").click(function(){
     else
         $("#myFooter").show();
 });
+
+$(document).ready(function(){
+    $("#myFooter").hide();
+});

@@ -685,6 +685,21 @@ function Stream() {
   }
 }
 
+function touchStarted() {
+	if (y==0) {
+		background(0);
+		x = -1;
+		y = 1;
+		t=0;
+	} else {
+		background(0);
+		x = -1;
+		y = 0;
+		t=0;
+	}
+	return false;
+}
+
 function keyPressed() {
 	if (len > 0) {
 		if (keyCode == SHIFT) {

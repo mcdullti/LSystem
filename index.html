@@ -96,6 +96,27 @@
       {
         margin:0
       }
+      #menu {
+				position: absolute;
+				bottom: 20px;
+				width: 100%;
+				text-align: center;
+			}
+      button {
+				color: rgba(127,255,255,0.75);
+				background: transparent;
+				outline: 1px solid rgba(127,255,255,0.75);
+				border: 0px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: rgba(0,255,255,0.5);
+			}
+			button:active {
+				color: #000000;
+				background-color: rgba(0,255,255,0.75);
+			}
       @media (max-width:991px)
       {
         .site-footer [class^=col-]
@@ -118,15 +139,34 @@
     </style>
   </head>
   <body>
-      <h1><b>Instructions:</b><br>
-        Select no. from 0 - 9<br>
-        Repeatedly press ALT slowly<br>
+    <h1><b>Instructions:</b><br>
+      Select no. from 0 - 9<br>
+      Repeatedly press ALT slowly<br>
       to generate algorithm<br>
       SHIFT - ↑size of system<br>
       CTRL - ↓size of system<br>
       z - reset system<br>
       m - Matrix
     </h1>
+    
+    <div id="menu">
+      <button id="0">0</button>
+      <button id="1">1</button>
+      <button id="2">2</button>
+      <button id="3">3</button>
+      <button id="4">4</button>
+      <button id="5">5</button>
+      <button id="6">6</button>
+      <button id="7">7</button>
+      <button id="8">8</button>
+      <button id="9">9</button>
+      <button id="alt">ALT</button>
+      <button id="shift">SHIFT</button>
+      <button id="ctrl">CTRL</button>
+      <button id="z">Z</button>
+      <button id="m">M</button>
+    </div>
+      
   </body>
 
     <!-- Site footer -->

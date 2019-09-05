@@ -685,16 +685,47 @@ function Stream() {
   }
 }
 
-var button = document.getElementbyId('0');
-button.addEventListener( 'click', function ( event ) {
-	background(0);
-	stroke(255);
-	t=0;
-	x = 0;
-	axiom = axiom0;
-	sentence = axiom;
-	y=0;
-}, false );
+init();
+
+function init() {
+
+	var button = document.getElementbyId('0');
+	button.addEventListener( 'click', function ( event ) {
+		background(0);
+		stroke(255);
+		t=0;
+		x = 0;
+		axiom = axiom0;
+		sentence = axiom;
+		y=0;
+	}, false );
+	
+	var button = document.getElementbyId('alt');
+	button.addEventListener( 'click', function ( event ) {
+		if (x == 1) {
+			generate1();
+		} else if (x == 2) {
+			generate2();
+		} else if (x == 3) {
+			generate3();
+		} else if (x == 4) {
+			generate4();
+		} else if (x == 5) {
+			generate5();
+		} else if (x == 6) {
+			generate6();
+		} else if (x == 7) {
+			generate7();
+		} else if (x == 8) {
+			generate8();
+		} else if (x == 9) {
+			generate9();
+		} else if (x == 0) {
+			generate0();
+		}
+	}, false );
+	
+}
 
 function keyPressed() {
 	if (len > 0) {

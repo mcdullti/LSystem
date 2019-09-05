@@ -685,20 +685,16 @@ function Stream() {
   }
 }
 
-function touchStarted() {
-	if (y==0) {
-		background(0);
-		x = -1;
-		y = 1;
-		t=0;
-	} else {
-		background(0);
-		x = -1;
-		y = 0;
-		t=0;
-	}
-	return false;
-}
+var button = document.getElementbyId('0');
+button.addEventListener( 'click', function ( event ) {
+	background(0);
+	stroke(255);
+	t=0;
+	x = 0;
+	axiom = axiom0;
+	sentence = axiom;
+	y=0;
+}, false );
 
 function keyPressed() {
 	if (len > 0) {

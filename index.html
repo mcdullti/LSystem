@@ -111,7 +111,7 @@
 	padding: 5px 10px;
 	cursor: pointer;
 	display: block;
-	width: 50px;
+	width: 100px;
 	padding: 5px;
 	margin: 5px;
       }
@@ -168,8 +168,8 @@
       <button onclick="alt()">ALT</button>
       <button onclick="shift()">SHIFT</button>
       <button onclick="ctrl()">CTRL</button>
-      <button onclick="reset()">Z</button>
-      <button onclick="matrix()">M</button>
+      <button onclick="reset()">Reset</button>
+      <button onclick="matrix()">Matrix</button>
       <button onclick="show()">Show/Hide Info</button>
     </div>
 		
@@ -310,16 +310,24 @@
 			y = 1;
 			t=0;
 		}
+		function show() {
+			var footer = document.getElementsByClassName( 'site-footer' );
+			if (footer[0].style.display === "none") {
+			    footer[0].style.display = "block";
+			} else {
+			    footer[0].style.display = "none";
+			}
+		}
 	</script>
 		
   </body>
 
     <!-- Site footer -->
-<!--   <footer class="site-footer">
+  <footer class="site-footer" style="display: none;">
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>About</h6>
-          <p class="text-justify">A simple website to generate Lindermayer Systems via key presses. <br><i>Hope you enjoy it!</i></p>
+          <p class="text-justify">A simple website to generate Lindermayer Systems. <br><i>Hope you enjoy it!</i></p>
         </div>
 
         <div class="col-xs-6 col-md-3">
@@ -343,6 +351,6 @@
         </div>
       </div>
       <hr>
-</footer> -->
+  </footer>
 
 </html>

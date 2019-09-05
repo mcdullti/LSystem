@@ -102,13 +102,17 @@
 				width: 100%;
 				text-align: center;
 			}
-      button {
+			button {
 				color: rgba(127,255,255,0.75);
 				background: transparent;
 				outline: 1px solid rgba(127,255,255,0.75);
 				border: 0px;
 				padding: 5px 10px;
 				cursor: pointer;
+				display: block;
+				width: 50px;
+				padding: 5px;
+				margin: 5px;
 			}
 			button:hover {
 				background-color: rgba(0,255,255,0.5);
@@ -166,7 +170,145 @@
       <button onclick="z()">Z</button>
       <button onclick="m()">M</button>
     </div>
-      
+		
+		<script>
+			function gen0() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 0;
+				axiom = axiom0;
+				sentence = axiom;
+				y=0;
+			}
+			function gen1() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 1;
+				axiom = axiom1;
+				sentence = axiom;
+				y=0;
+			}
+			function gen2() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 2;
+				axiom = axiom2;
+				sentence = axiom;
+				y=0;
+			}
+			function gen3() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 3;
+				axiom = axiom3;
+				sentence = axiom;
+				y=0;
+			}
+			function gen4() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 4;
+				axiom = axiom4;
+				sentence = axiom;
+				y=0;
+			}
+			function gen5() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 5;
+				axiom = axiom5;
+				sentence = axiom;
+				y=0;
+			}
+			function gen6() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 6;
+				axiom = axiom6;
+				sentence = axiom;
+				y=0;
+			}
+			function gen7() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 7;
+				axiom = axiom7;
+				sentence = axiom;
+				y=0;
+			}
+			function gen8() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 8;
+				axiom = axiom8;
+				sentence = axiom;
+				y=0;
+			}
+			function gen9() {
+				background(0);
+				stroke(255);
+				t=0;
+				x = 9;
+				axiom = axiom9;
+				sentence = axiom;
+				y=0;
+			}
+			function alt() {
+				if (x == 1) {
+					generate1();
+				} else if (x == 2) {
+					generate2();
+				} else if (x == 3) {
+					generate3();
+				} else if (x == 4) {
+					generate4();
+				} else if (x == 5) {
+					generate5();
+				} else if (x == 6) {
+					generate6();
+				} else if (x == 7) {
+					generate7();
+				} else if (x == 8) {
+					generate8();
+				} else if (x == 9) {
+					generate9();
+				} else if (x == 0) {
+					generate0();
+				}
+			}
+			function shift() {
+				if (len > 0) {
+					lenS += 1;
+				}
+			}
+			function ctrl() {
+				if (len > 0) {
+					lenS -= 1;
+				}
+			}
+			function z() {
+				background(0);
+				sentence = axiom;
+				t=0;
+				y=0;
+			}
+			function m() {
+				background(0);
+				x = -1;
+				y = 1;
+				t=0;
+			}
+		</script>
+		
   </body>
 
     <!-- Site footer -->

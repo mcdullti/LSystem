@@ -167,8 +167,9 @@
       <button onclick="alt()">ALT</button>
       <button onclick="shift()">SHIFT</button>
       <button onclick="ctrl()">CTRL</button>
-      <button onclick="z()">Z</button>
-      <button onclick="m()">M</button>
+      <button onclick="reset()">Z</button>
+      <button onclick="matrix()">M</button>
+			<button onclick="show()">Show/Hide Info</button>
     </div>
 		
 		<script>
@@ -295,13 +296,14 @@
 					lenS -= 1;
 				}
 			}
-			function z() {
+			function reset() {
 				background(0);
 				sentence = axiom;
 				t=0;
 				y=0;
+				x = -1;
 			}
-			function m() {
+			function matrix() {
 				background(0);
 				x = -1;
 				y = 1;

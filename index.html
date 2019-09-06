@@ -8,6 +8,7 @@
     <script src="p5.dom.min.js"></script>
     <script src="p5.sound.min.js"></script>
     <script src="L.js"></script>
+    <script src="input.js"></script>
 <!--     <script type="text/javascript">
       testExp = new RegExp('Android|webOS|iPhone|iPad|' +
                    'BlackBerry|Windows Phone|'  +
@@ -122,6 +123,147 @@
 	color: #000000;
 	background-color: rgba(0,255,255,0.75);
       }
+    	.ctrl {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid #D5DCE6;
+		background-color: #fff;
+		border-radius: 5px;
+		font-size: 30px;
+	}
+
+	.ctrl__counter {
+		position: relative;
+		width: 200px;
+		height: 100px;
+		color: #333C48;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.ctrl__counter.is-input .ctrl__counter-num {
+		visability: hidden;
+		opacity: 0;
+		transition: opacity 100ms ease-in;
+	}
+
+	.ctrl__counter.is-input .ctrl__counter-input {
+		visability: visible;
+		opacity: 1;
+		transition: opacity 100ms ease-in;
+	}
+
+	.ctrl__counter-input {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 2;
+		box-shadow: none;
+		outline: none;
+		border: none;
+		color: #333C48;
+		font-size: 30px;
+		line-height: 100px;
+		text-align: center;
+		visability: hidden;
+		opacity: 0;
+		transition: opacity 100ms ease-in;
+	}
+
+	.ctrl__counter-num {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		line-height: 100px;
+		visability: visible;
+		opacity: 1;
+		transition: opacity 1000ms ease-in;
+	}
+
+	.ctrl__counter-num.is-increment-hide {
+		opacity: 0;
+		transform: translateY(-50px);
+		animation: increment-prev 100ms ease-in;
+	}
+
+	.ctrl__counter-num.is-increment-visible {
+		opacity: 1;
+		transform: translateY(0);
+		animation: increment-next 100ms ease-out;
+	}
+
+	.ctrl__counter-num.is-decrement-hide {
+		opacity: 0;
+		transform: translateY(50px);
+		animation: decrement-prev 100ms ease-in;
+	}
+
+	.ctrl__counter-num.is-decrement-visible {
+		opacity: 1;
+		transform: translateY(0);
+		animation: decrement-next 100ms ease-out;
+	}
+
+	.ctrl__button {
+		width: 100px;
+		line-height: 100px;
+		text-align: center;
+		color: #fff;
+		cursor: pointer;
+		background-color: #8498a7;
+		transition: background-color 100ms ease-in;
+	}
+
+	.ctrl__button:hover {
+		background-color: #90a2b0;
+		transition: background-color 100ms ease-in;
+	}
+
+	.ctrl__button:active {
+		background-color: #778996;
+		transition: background-color 100ms ease-in;
+	}
+
+	.ctrl__button--decrement {
+		border-radius: 5px 0 0 5px;
+	}
+
+	.ctrl__button--increment {
+		border-radius: 0 5px 5px 0;
+	}
+
+	@keyframes decrement-prev {
+		from {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes decrement-next {
+		from {
+			opacity: 0;
+			transform: translateY(-50px);
+		}
+	}
+
+	@keyframes increment-prev {
+		from {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes increment-next {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+	}
       @media (max-width:991px)
       {
         .site-footer [class^=col-]
@@ -364,5 +506,14 @@
       <button onclick="matrix()">Matrix</button>
       <button onclick="show()">Show/Hide Info</button>
   </div>
+	
+	<div class="ctrl">
+	  <div class="ctrl__button ctrl__button--decrement">&ndash;</div>
+	  <div class="ctrl__counter">
+	    <input class="ctrl__counter-input" />{type: "text", value: "0", maxlength: "10"}<div class="ctrl__counter-num">0</div>
+	  </div>
+	  <div class="ctrl__button ctrl__button--increment">+</div>
+	</div>
+
 
 </html>
